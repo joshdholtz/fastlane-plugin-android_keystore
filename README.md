@@ -12,15 +12,30 @@ fastlane add_plugin android_keystore
 
 ## About android_keystore
 
-Generate an Android keystore file
-
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Generate an Android keystore file. The default directory where the keystore will be placed is `.android_signing` but this can be changed in the action arguments.
 
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+### With environment variables
+
+```sh
+ANDROID_KEYSTORE_KEYSTORE_NAME = fastlanescreencast.keystore
+ANDROID_KEYSTORE_ALIAS_NAME = fastlanescreencast
+ANDROID_KEYSTORE_PASSWORD = supersecret
+ANDROID_KEYSTORE_KEY_PASSWORD = supersecret
+ANDROID_KEYSTORE_FULL_NAME = Fastlane Screencast
+ANDROID_KEYSTORE_ORG = fastcast
+ANDROID_KEYSTORE_ORG_UNIT = fastcast
+ANDROID_KEYSTORE_CITY_LOCALITY = Chicago
+ANDROID_KEYSTORE_STATE_PROVINCE = IL
+ANDROID_KEYSTORE_COUNTRY = US
+```
+
+```rb
+android_keystore
+```
 
 ## Run tests for this plugin
 
