@@ -37,7 +37,7 @@ module Fastlane
         unless File.file?(keystore_path)
           keytool_parts = [
             "keytool -genkey -v",
-            "-keystore #{keystore_path}",
+            "-keystore '#{keystore_path}'",
             "-alias #{alias_name}",
             "-keyalg RSA -keysize 2048 -validity 10000",
             "-storepass #{password} ",
